@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Baptiste Grosjean - CV</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
+:root {
+  --primary-color: #001F5A; /* Bleu foncé */
+  --secondary-color: #FF0000; /* Rouge */
+  --third-color: #F3890B;     /* Orange foncé */
+  --body-color: #666666;      /* Gris foncé */
+  --emphasis-color: #2E2E2E;  /* Gris très foncé */
+  --background-color: #E2E2E2;/* Gris clair */
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  color: var(--body-color);
+  background-color: var(--background-color);
+}
+
+a {
+  color: var(--third-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1, h2, h3 {
+  color: var(--primary-color);
+  margin-top: 0;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  background-color: var(--background-color);
+  color: var(--body-color);
+  width: 30%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.sidebar h1 {
+  font-size: 2em;
+  margin-top: 0;
+}
+
+.sidebar h2 {
+  font-size: 1.2em;
+  color: var(--third-color);
+}
+
+.sidebar p {
+  margin: 5px 0;
+  font-size: 0.9em;
+}
+
+.sidebar i {
+  margin-right: 8px;
+}
+
+#profile-picture {
+  width: 100%;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.skills h2 {
+  font-size: 1.5em;
+  margin-top: 30px;
+}
+
+.skill {
+  margin-bottom: 10px;
+}
+
+.skill h3 {
+  font-size: 1em;
+  margin: 5px 0;
+}
+
+.skill-category {
+  margin-bottom: 20px;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.skill-tag {
+  background-color: var(--third-color);
+  color: #fff;
+  padding: 5px 10px;
+  margin: 5px;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+.languages h2 {
+  font-size: 1.5em;
+  margin-top: 30px;
+}
+
+.languages p {
+  margin: 5px 0;
+  font-size: 0.9em;
+}
+
+.daily-life h2 {
+  font-size: 1.5em;
+  margin-top: 30px;
+}
+
+.daily-life canvas {
+  display: block;
+  margin: 0 auto;
+}
+
+.main-content {
+  width: 70%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.main-content section {
+  margin-bottom: 40px;
+}
+
+.main-content h2 {
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+}
+
+.experience-item, .education-item, .project-item, .reference-item {
+  margin-bottom: 20px;
+}
+
+.experience-item h3, .education-item h3, .project-item h3 {
+  margin: 0;
+}
+
+.date, .location {
+  font-size: 0.9em;
+  color: #666;
+}
+
+.reference-item blockquote {
+  margin: 10px 0;
+  padding-left: 15px;
+  border-left: 3px solid var(--third-color);
+  color: #555;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar, .main-content {
+    width: 100%;
+  }
+}
+
+.contact-info {
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  display: flex;
+  align-items: center;
+}
+
+.contact-info i {
+  margin-right: 10px;
+}
+
+.main-content h2::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 3px;
+  background-color: var(--third-color);
+  margin-top: 5px;
+}
+
+.skills {
+  margin-bottom: 20px;
+}
+
+.skills .skill {
+  margin-bottom: 15px;
+}
+
+.skill-bar {
+  background-color: #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+  height: 10px;
+}
+
+.skill-level {
+  background-color: var(--third-color);
+  height: 100%;
+  width: 0;
+}
+
+.skill-level[data-level]:after {
+  content: '';
+  display: block;
+  width: attr(data-level '%');
+  height: 100%;
+  background-color: var(--third-color);
+}
+
+.section-icon {
+  margin-right: 10px;
+  color: var(--third-color);
+}
+
+.project-item h3 {
+  font-size: 1.2em;
+  margin-bottom: 5px;
+}
+
+.project-item p {
+  margin: 5px 0;
+}
+
+.experience-item h3 {
+  font-size: 1.2em;
+  margin-bottom: 5px;
+}
+
+.experience-item .date, .education-item .date {
+  font-style: italic;
+}
+
+.education-item h3 {
+  font-size: 1.2em;
+  margin-bottom: 5px;
+}
+
+.education-item .institution {
+  font-weight: bold;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+ul li::before {
+  content: '•';
+  color: var(--third-color);
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+.daily-life {
+  text-align: center;
+}
+
+.daily-life canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+.footer {
+  text-align: center;
+  font-size: 0.8em;
+  color: #888;
+  margin-top: 20px;
+}
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <div class="container">
+    <aside class="sidebar">
+      <img src="assets/images/profil.jpeg" alt="Baptiste Grosjean" id="profile-picture">
+
+      <div class="contact-info">
+        <h1>Baptiste Grosjean</h1>
+        <h2>Computer Scientist | Student @UMons by night &amp; IT @EMVI by day</h2>
+        <p><i class="fas fa-envelope"></i> <a href="mailto:grosjeanbaptisteit@outlook.com">grosjeanbaptisteit@outlook.com</a></p>
+        <p><i class="fas fa-phone"></i> +32 496 28 97 05</p>
+        <p><i class="fas fa-map-marker-alt"></i> Kraainem, BE</p>
+        <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/grosjeanbaptiste">LinkedIn</a></p>
+        <p><i class="fab fa-github"></i> <a href="https://github.com/grosjeanbaptiste">GitHub</a></p>
+        <p><i class="fas fa-car"></i> Permis B</p>
+      </div>
+
+      <div class="skills">
+        <h2>Compétences Techniques</h2>
+            <div class="skill-category">
+              <div class="skill-tags">
+                  <span class="skill-tag">SQL</span>
+                  <span class="skill-tag">C#</span>
+                  <span class="skill-tag">Java</span>
+                  <span class="skill-tag">Python</span>
+                  <span class="skill-tag">JS</span>
+                  <span class="skill-tag">TS</span>
+                  <span class="skill-tag">XML</span>
+                  <span class="skill-tag">JSON</span>
+                  <span class="skill-tag">HTML</span>
+                  <span class="skill-tag">CSS</span>
+                  <span class="skill-tag">Zsh</span>
+                  <span class="skill-tag">Dart</span>
+                  <span class="skill-tag">LaTeX</span>
+                  <span class="skill-tag">SQL Server</span>
+                  <span class="skill-tag">EF</span>
+                  <span class="skill-tag">.NET</span>
+                  <span class="skill-tag">Pandas</span>
+                  <span class="skill-tag">NumPy</span>
+                  <span class="skill-tag">Whisper</span>
+                  <span class="skill-tag">Spacy</span>
+                  <span class="skill-tag">Node.js</span>
+                  <span class="skill-tag">Express.js</span>
+                  <span class="skill-tag">Blazor</span>
+                  <span class="skill-tag">Angular.js</span>
+                  <span class="skill-tag">React.js</span>
+                  <span class="skill-tag">Flutter</span>
+                  <span class="skill-tag">Gradle</span>
+                  <span class="skill-tag">NPM</span>
+                  <span class="skill-tag">JWT</span>
+                  <span class="skill-tag">Auth0</span>
+                  <span class="skill-tag">SSH</span>
+                  <span class="skill-tag">Venv</span>
+                  <span class="skill-tag">Conda</span>
+                  <span class="skill-tag">Docker</span>
+                  <span class="skill-tag">UML</span>
+                  <span class="skill-tag">Merise</span>
+                  <span class="skill-tag">VisualParadigm</span>
+                  <span class="skill-tag">CleanCode</span>
+                  <span class="skill-tag">CleanArchitecture</span>
+                  <span class="skill-tag">DDD</span>
+                  <span class="skill-tag">CQRS</span>
+              </div>
+            </div>
+      </div>
+
+      <div class="skills">
+        <h2>En cours d'apprentissage</h2>
+            <div class="skill-category">
+              <div class="skill-tags">
+                  <span class="skill-tag">TDD</span>
+                  <span class="skill-tag">TensorFlow</span>
+                  <span class="skill-tag">Scikit-Learn</span>
+                  <span class="skill-tag">C</span>
+                  <span class="skill-tag">XQuery</span>
+                  <span class="skill-tag">Blockchain</span>
+              </div>
+            </div>
+      </div>
+
+      <div class="skills">
+        <h2>Compétences Personnelles</h2>
+            <div class="skill-category">
+              <div class="skill-tags">
+                  <span class="skill-tag">Adaptability</span>
+                  <span class="skill-tag">Resilience</span>
+                  <span class="skill-tag">Leadership</span>
+                  <span class="skill-tag">Creativity</span>
+                  <span class="skill-tag">Initiative</span>
+                  <span class="skill-tag">Analysis</span>
+                  <span class="skill-tag">Flexibility</span>
+                  <span class="skill-tag">Teamwork</span>
+                  <span class="skill-tag">Organization</span>
+                  <span class="skill-tag">Pragmatism</span>
+                  <span class="skill-tag">Resourcefulness</span>
+                  <span class="skill-tag">Thoroughness</span>
+              </div>
+            </div>
+      </div>
+
+      <div class="languages">
+        <h2>Langues</h2>
+          <p>French - Native Speaker</p>
+          <p>English - B1+/B2 (TOEIC 730/ ELAO)</p>
+          <p>Dutch - B1</p>
+      </div>
+
+      <div class="daily-life">
+        <h2>Une journée type</h2>
+        <canvas id="dailyLifeChart" width="200" height="200"></canvas>
+      </div>
+    </aside>
+    <main class="main-content">
+      <section id="about">
+        <h2>À propos</h2>
+        <p>Computer Scientist | Student @UMons by night &amp; IT @EMVI by day</p>
+      </section>
+
+      <section id="experience">
+        <h2>Expériences Professionnelles</h2>
+          <div class="experience-item">
+            <h3>IT chez EMVI</h3>
+            <p class="date">2024-10-01 - </p>
+            <p class="location">Brugge, Flanders, Belgium</p>
+            <p></p>
+          <div class="experience-item">
+            <h3>Data Scientist chez Xtrada</h3>
+            <p class="date">2024-03-01 - 2024-09-22</p>
+            <p class="location">Antwerp, Flanders, Belgium</p>
+            <p>Use of python libraries (Spacy,...) to extract named entities from text via NER model training and implementation in .Net
+
+Model rate 87%</p>
+          <div class="experience-item">
+            <h3>Software Crafter chez Xtrada</h3>
+            <p class="date">2023-08-21 - 2024-09-22</p>
+            <p class="location">Antwerp, Flanders, Belgium</p>
+            <p>Software modernization within the .Net stack following domain driven design and clean code principles. 
+
+Implementation of Azure ai services in .net solution.</p>
+          <div class="experience-item">
+            <h3>.Net/React Software Crafter chez VhAuctions</h3>
+            <p class="date">2024-01-01 - 2024-08-07</p>
+            <p class="location">Anvers, Région flamande, Belgique</p>
+            <p></p>
+          <div class="experience-item">
+            <h3>Software Crafter chez Hackathon Citizens of Wallonia</h3>
+            <p class="date">2024-03-15 - 2024-03-17</p>
+            <p class="location">Charleroi et périphérie</p>
+            <p>EduCraft: solution allowing anyone to craft his own personnalized path to get new skills</p>
+          <div class="experience-item">
+            <h3>.Net/Blazor Software Crafter chez aXinco</h3>
+            <p class="date">2023-09-01 - 2023-12-31</p>
+            <p class="location">Anvers, Région flamande, Belgique</p>
+            <p>Crafting Axinco Kwalitijd webapp in .Net / Blazor folowing DDD and clean code principles.</p>
+          <div class="experience-item">
+            <h3>Full Stack Developer Web Intern chez Technofutur TIC</h3>
+            <p class="date">2022-12-01 - 2023-06-30</p>
+            <p class="location">Charleroi, Wallonia, Belgique</p>
+            <p>This qualifying training aimed to strengthen the technical skills acquired during my bachelor&#x27;s degree program at EPHEC. 
+In addition, during the extension, we received an introduction to BUSINESS Intelligence and ETL processes (Data Warehousing) using Microsoft tools (SSIS, ...). 
+This comprehensive training covered various areas including SQL Server, Node.js, Express.js, React.js, and Angular.js, encompassing everything from database development to user interface and backend.</p>
+          <div class="experience-item">
+            <h3>Full Stack Developer Web Intern chez Hackathon Citizens of Wallonia</h3>
+            <p class="date">2023-03-29 - 2023-03-31</p>
+            <p class="location">Charleroi, Région wallonne, Belgique</p>
+            <p>OnlyTogether: solution allowing the vulnerable users always being accompagned</p>
+          <div class="experience-item">
+            <h3>Full Stack Developer Web Intern chez EDITx: IT Challenges, IT Jobs, Education in IT for X</h3>
+            <p class="date">2022-04-01 - 2022-04-30</p>
+            <p class="location">Région de Bruxelles-Capitale, Belgique</p>
+            <p></p>
+          <div class="experience-item">
+            <h3>Student Job chez Les Auberges de Jeunesse - Wallonie &amp; Bruxelles</h3>
+            <p class="date">2022-03-30 - 2022-03-31</p>
+            <p class="location">Région de Bruxelles-Capitale, Belgique</p>
+            <p></p>
+          <div class="experience-item">
+            <h3>Full Stack Developer Web Intern chez RESTOMAX</h3>
+            <p class="date">2021-11-01 - 2022-03-31</p>
+            <p class="location">Région de Bruxelles-Capitale, Belgique</p>
+            <p></p>
+          <div class="experience-item">
+            <h3>Student Job chez Quick Restaurant</h3>
+            <p class="date">2017-09-01 - 2017-09-30</p>
+            <p class="location">Kraainem, Flemish Region, Belgium</p>
+            <p></p>
+      </section>
+
+      <section id="education">
+        <h2>Éducation</h2>
+          <div class="education-item">
+            <h3>Master of Science - MS en Computer Science</h3>
+            <p class="institution">UMons</p>
+            <p class="date">2022-10-15 - </p>
+            <p></p>
+          </div>
+          <div class="education-item">
+            <h3>Professional Bachelor&#x27;s degree en Information Systems Management</h3>
+            <p class="institution">Ecole Pratique Hautes Etudes Commerciales (EPHEC-EPS)</p>
+            <p class="date">2018-09-30 - 2022-10-15</p>
+            <p>Satisfaction </p>
+          </div>
+          <div class="education-item">
+            <h3>Attestation en 7e Spéciale Mathématiques</h3>
+            <p class="institution">Institut Saint-Louis Bruxelles</p>
+            <p class="date">2019-09-30 - 2020-06-30</p>
+            <p>Attestation</p>
+          </div>
+          <div class="education-item">
+            <h3>Bachelor of Arts - BA en Political sciences</h3>
+            <p class="institution">Université Saint-Louis - Bruxelles</p>
+            <p class="date">2016-09-30 - 2019-06-30</p>
+            <p>29 credits earned in 2016-2017, contact me for more informations.</p>
+          </div>
+          <div class="education-item">
+            <h3>Bachelor of Science - BSc en Business Engineering</h3>
+            <p class="institution">Solvay Brussels School of Economics and Management</p>
+            <p class="date">2015-09-30 - 2016-06-30</p>
+            <p>Contact me for more informations.</p>
+          </div>
+          <div class="education-item">
+            <h3>Bachelor of Science - BSc en Business Engineering</h3>
+            <p class="institution">Université libre de Bruxelles</p>
+            <p class="date">2015-09-30 - 2016-06-30</p>
+            <p>Contact me for more informations.</p>
+          </div>
+          <div class="education-item">
+            <h3>Cours préparatoires en Médecine et dentisterie</h3>
+            <p class="institution">UCLouvain - Université catholique de Louvain</p>
+            <p class="date">2014-09-30 - 2015-06-30</p>
+            <p>Attestation </p>
+          </div>
+          <div class="education-item">
+            <h3>C.E.S.S. en General Studies Maths &amp; Modern languages</h3>
+            <p class="institution">Centre Scolaire Saint-Adrien - Val Duchesse</p>
+            <p class="date">2012-09-30 - 2015-06-30</p>
+            <p>Satis bene</p>
+          </div>
+          <div class="education-item">
+            <h3> en General studies Latin &amp; Greec</h3>
+            <p class="institution">Lycée Mater Dei</p>
+            <p class="date">2009-09-30 - 2012-06-30</p>
+            <p></p>
+          </div>
+      </section>
+
+      <section id="projects">
+        <h2>Projets</h2>
+          <div class="project-item">
+            <h3>EduCraft</h3>
+            <p class="date">2024-03-29 - 2024-03-31</p>
+            <p>Education Manager</p>
+            <p></p>
+            <p>Type: </p>
+            <p>Rôle: </p>
+            <p>Mots-clés: </p>
+            <a href="">Voir le projet</a>
+          </div>
+          <div class="project-item">
+            <h3>MyWay</h3>
+            <p class="date">2023-02-01 - </p>
+            <p>Education manager for students.</p>
+            <p>Education manager for students.</p>
+            <p>Type: Web Application</p>
+            <p>Rôle: Founder </p>
+            <p>Mots-clés: JavaScript API UI/UX </p>
+            <a href="https://my-way-bg.vercel.app">Voir le projet</a>
+          </div>
+          <div class="project-item">
+            <h3>VhAuctions NER Inventory Model</h3>
+            <p class="date">2024-03-01 - 2024-08-07</p>
+            <p>Named Entity Recognition Machine Learning Model to extract Inventory Items from and audio transcription.</p>
+            <p></p>
+            <p>Type: </p>
+            <p>Rôle: </p>
+            <p>Mots-clés: </p>
+            <a href="">Voir le projet</a>
+          </div>
+          <div class="project-item">
+            <h3>VhAuctions</h3>
+            <p class="date">2024-01-01 - 2024-02-28</p>
+            <p>Fleet manager for auctions.</p>
+            <p></p>
+            <p>Type: </p>
+            <p>Rôle: </p>
+            <p>Mots-clés: </p>
+            <a href="">Voir le projet</a>
+          </div>
+          <div class="project-item">
+            <h3>Kwalitijd</h3>
+            <p class="date">2023-09-01 - 2023-12-31</p>
+            <p>Survey manager for sports clubs and federations.</p>
+            <p></p>
+            <p>Type: </p>
+            <p>Rôle: </p>
+            <p>Mots-clés: </p>
+            <a href="">Voir le projet</a>
+          </div>
+          <div class="project-item">
+            <h3>WebMenu</h3>
+            <p class="date">2021-11-01 - 2022-03-31</p>
+            <p>QRCode based cash register for HoReCa establishments.</p>
+            <p></p>
+            <p>Type: </p>
+            <p>Rôle: </p>
+            <p>Mots-clés: </p>
+            <a href="">Voir le projet</a>
+          </div>
+      </section>
+
+      <section id="references">
+        <h2>Références</h2>
+          <div class="reference-item">
+            <p><strong>Tino Schuerewegen, Software developer at Xtrada</strong></p>
+            <blockquote>I had the pleasure of working with Baptiste for a year, with the added joy of mentoring him on a project for three months. If there&#x27;s one thing that stands out about Baptiste, it&#x27;s his boundless energy. Whether it&#x27;s 9 AM or 9 PM, he&#x27;s always the most enthusiastic person in the room—sometimes even more enthusiastic than the coffee machine.
+
+Baptiste brings a contagious energy to any project he&#x27;s part of. He’s outgoing, smart, and has an eagerness to learn that is truly admirable. Whether he&#x27;s diving into a complex task or asking insightful questions, he&#x27;s always in search of knowledge. His enthusiasm for learning, especially when it comes to leveraging tools like ChatGPT, is both impressive and a little intimidating. Seriously, if ChatGPT had a best friend, it would be Baptiste!
+
+He’s also incredibly hands-on, never shying away from rolling up his sleeves and getting deep into the work. His approach isn&#x27;t just theoretical; he&#x27;s all about practical, tangible results.
+
+In summary, if you&#x27;re looking for someone who brings enthusiasm, intelligence, and a touch of humor to every task, Baptiste is your person. Working with him was not just productive, but genuinely enjoyable.</blockquote>
+          </div>
+          <div class="reference-item">
+            <p><strong>Emiel Van Gysegem, Marketing and operations at Xtra Groep</strong></p>
+            <blockquote>Hoewel we niet direct samenwerkten, had ik altijd een heel fijne connectie met Baptiste. In een mengelmoes van Engels, Nederlands en Frans deelden we vaak leuke gesprekken. Zijn enthousiasme en energie zijn echt aanstekelijk, en hij weet een prettige, informele sfeer te creëren in elke interactie. Baptiste is iemand die een positieve dynamiek met zich meebrengt.</blockquote>
+          </div>
+          <div class="reference-item">
+            <p><strong>Steven Claus, CFO at Xtra Groep</strong></p>
+            <blockquote>Baptiste is a full-stack software developer and is driven by an unwavering determination. This mindset permeates every aspect of his career. He has worked in various fields, allowing him to quickly adapt to any situation. These roles have honed both his technical and interpersonal skills, making him a versatile collaborator who significantly impacts every project he joins. Fueled by a constant desire to learn, he continually updates his knowledge through a master’s degree in computer science. This ongoing learning journey makes him a well-rounded IT professional in the field of computer science.</blockquote>
+          </div>
+          <div class="reference-item">
+            <p><strong>Tjörven Janssens, software developer at Xtrada</strong></p>
+            <blockquote>Baptiste is naast een software ontwikkelaar, graag bezig met data-analyse en is een expert in het gebruik van chat-gtp. Hij leert graag nieuwe dingen en doet dit ook snel. Hij is erg enthousiast in omgang en staat steeds klaar voor een vriendelijk woord of wat advies.</blockquote>
+          </div>
+          <div class="reference-item">
+            <p><strong>Michael Culot, Sales manager at Xtrada</strong></p>
+            <blockquote>Baptiste is a great and devoted developer who’s eager to keep learning new technologies and elevate his skill set. You would be amazed about not only his knowledge but also his warm open enthusiasm. Baptiste, you’re going to be doing great things in your life, just keep your vibrate spirit ✊</blockquote>
+          </div>
+      </section>
+    </main>
+  </div>
+
+
+<script>
+  var ctx = document.getElementById('dailyLifeChart').getContext('2d');
+  var dailyLifeChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      labels: ['Sommeil', 'Transport', 'Travail', 'Cours', 'Sport', 'Maison'],
+      datasets: [{
+        data: [7, 2, 9, 3, 1, 6],
+        backgroundColor: [
+          '#F3890B',
+          '#FF0000',
+          '#001F5A',
+          '#C0C0C0',
+          '#008000',
+          '#FFFF00'
+        ],
+      }]
+    },
+    options: {
+      responsive: false,
+      legend: {
+        position: 'bottom',
+      }
+    }
+  });
+</script>
+
+</body>
+</html>
