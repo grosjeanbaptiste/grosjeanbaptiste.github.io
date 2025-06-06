@@ -6,7 +6,7 @@
   <title>Baptiste Grosjean - CV</title>
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
   <style>
     @import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
   </style>
@@ -23,6 +23,10 @@
       <li><a href="#projects">Projects</a></li>
       <li><a href="#references">References</a></li>
     </ul>
+    <button id="theme-toggle" aria-label="Toggle theme">
+      <i class="fas fa-moon"></i>
+      <span>Dark Mode</span>
+    </button>
   </nav>
 
   <div class="container">
@@ -31,7 +35,7 @@
 
       <div class="contact-info">
         <h1>Baptiste Grosjean</h1>
-        <h2>Computer Scientist | Student @UMons by night &amp; IT @EMVI by day</h2>
+        <h2>Computer Scientist | Student @UMons by night &amp; AI Software Crafter by day</h2>
         <p>
           <i class="fas fa-envelope"></i>
           <a href="mailto:grosjeanbaptisteit@outlook.com">grosjeanbaptisteit@outlook.com</a>
@@ -56,7 +60,7 @@
       </div>
 
       <div class="skills">
-        <h2>Compétences Techniques</h2>
+        <h2>Technical Skills</h2>
         <div class="skill-category">
           <div class="skill-tags">
             <span class="skill-tag">SQL</span>
@@ -105,7 +109,7 @@
       </div>
 
       <div class="skills">
-        <h2>En cours d'apprentissage</h2>
+        <h2>Currently Learning</h2>
         <div class="skill-category">
           <div class="skill-tags">
             <span class="skill-tag">TDD</span>
@@ -114,12 +118,13 @@
             <span class="skill-tag">C</span>
             <span class="skill-tag">XQuery</span>
             <span class="skill-tag">Blockchain</span>
+            <span class="skill-tag">Rust</span>
           </div>
         </div>
       </div>
 
       <div class="skills">
-        <h2>Compétences Personnelles</h2>
+        <h2>Soft Skills</h2>
         <div class="skill-category">
           <div class="skill-tags">
             <span class="skill-tag">Adaptability</span>
@@ -139,32 +144,32 @@
       </div>
 
       <div class="languages">
-        <h2>Langues</h2>
+        <h2>Languages</h2>
         <p>French - Native Speaker</p>
         <p>English - B1+/B2 (TOEIC 730/ ELAO)</p>
         <p>Dutch - B1</p>
       </div>
 
       <div class="daily-life">
-        <h2>Une journée type</h2>
+        <h2>Typical Day</h2>
         <canvas id="dailyLifeChart" width="200" height="200"></canvas>
       </div>
     </aside>
     <main class="main-content" id="cvContent">
       <section id="about">
-        <h2>À propos</h2>
-        <p>Computer Scientist | Student @UMons by night &amp; IT @EMVI by day</p>
+        <h2>About Me</h2>
+        <p>Computer Scientist | Student @UMons &amp; AI Software Crafter by day</p>
       </section>
       <section id="experience">
-        <h2>Expériences Professionnelles</h2>
+        <h2>Work Experience</h2>
         <div class="experience-item">
-          <h3>IT chez EMVI</h3>
-          <p class="date">2024-10-01 - </p>
+          <h3>IT at EMVI</h3>
+          <p class="date">2024-10-01 - 2025-06-30</p>
           <p class="location">Brugge, Flanders, Belgium</p>
           <p></p>
         </div>
         <div class="experience-item">
-          <h3>Data Scientist chez Xtrada</h3>
+          <h3>Data Scientist at Xtrada</h3>
           <p class="date">2024-03-01 - 2024-09-22</p>
           <p class="location">Antwerp, Flanders, Belgium</p>
           <p>Use of python libraries (Spacy,...) to extract named entities from text via NER model training and
@@ -173,7 +178,7 @@
             Model rate 87%</p>
         </div>
         <div class="experience-item">
-          <h3>Software Crafter chez Xtrada</h3>
+          <h3>Software Crafter at Xtrada</h3>
           <p class="date">2023-08-21 - 2024-09-22</p>
           <p class="location">Antwerp, Flanders, Belgium</p>
           <p>Software modernization within the .Net stack following domain driven design and clean code principles.
@@ -244,7 +249,7 @@
       </section>
 
       <section id="education">
-        <h2>Éducation</h2>
+        <h2>Education</h2>
         <div class="education-item">
           <h3>Master of Science - MS en Computer Science</h3>
           <p class="institution">UMons</p>
@@ -367,7 +372,13 @@
       </section>
 
       <section id="references">
-        <h2>Références</h2>
+        <h2>References</h2>
+        <div class="reference-item">
+          <p>
+            <strong>Waseem Virk, Flutter Dev Emvi.ai</strong>
+          </p>
+          <blockquote>Working alongside Baptiste Grosjean on the EMVI project has been an incredibly rewarding experience—both professionally and personally. Not only is Baptiste a highly skilled developer with a sharp eye for design and functionality, but he’s also been a mentor and an inspiration throughout our collaboration.\n\nI’ve learned so much from him—from best practices in Flutter development to the importance of thoughtful UI/UX and clean architecture. He’s always willing to share his knowledge, explain complex ideas with clarity, and support the team in any way he can.\n\nWhat stands out the most is Baptiste’s ability to turn challenges into opportunities. His calm, focused approach and problem-solving mindset helped us overcome technical hurdles and build features that truly improve user experience. On top of that, his collaborative nature made working as a team feel seamless and motivating.\n\nIf you're looking for someone who not only delivers exceptional results but also uplifts everyone around him, I can't recommend Baptiste enough. He’s a fantastic developer, a great teammate, and someone I’ve been lucky to learn from.</blockquote>
+        </div>
         <div class="reference-item">
           <p>
             <strong>Tino Schuerewegen, Software developer at Xtrada</strong>
@@ -480,6 +491,10 @@
     });
   </script>
 
+  <script src="js/theme.js"></script>
+  <script>
+    // Your existing JavaScript code here
+  </script>
 </body>
 
 </html>
