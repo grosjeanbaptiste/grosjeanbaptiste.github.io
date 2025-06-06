@@ -12,6 +12,8 @@
   </style>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="js/theme.js" defer></script>
+  <script src="js/chart.js" defer></script>
 </head>
 
 <body>
@@ -446,55 +448,11 @@
     </main>
   </div>
 
-  <button id="cvButton">Preview and Download CV</button>
+  <a href="assets/cv/cv_grosjean_baptiste_en.pdf" class="cv-download-button" download>
+    <i class="fas fa-download"></i>Download CV
+  </a>
 
-  <script>
-    document.getElementById('cvButton').addEventListener('click', function() {
-      const element = document.getElementById('cvContent'); // Assuming you have an element with this ID
-      const opt = {
-        margin: 1,
-        filename: 'CV_Baptiste_Grosjean.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2 },
-        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
-      };
-
-      // Generate the PDF
-      html2pdf().from(element).set(opt).save();
-    });
-  </script>
-
-  <script>
-    var ctx = document.getElementById('dailyLifeChart').getContext('2d');
-    var dailyLifeChart = new Chart(ctx, {
-      type: 'doughnut',
-      data: {
-        labels: ['Sommeil', 'Transport', 'Travail', 'Cours', 'Sport', 'Maison'],
-        datasets: [{
-          data: [7, 2, 9, 3, 1, 6],
-          backgroundColor: [
-            '#F3890B',
-            '#FF0000',
-            '#001F5A',
-            '#C0C0C0',
-            '#008000',
-            '#FFFF00'
-          ],
-        }]
-      },
-      options: {
-        responsive: false,
-        legend: {
-          position: 'bottom',
-        }
-      }
-    });
-  </script>
-
-  <script src="js/theme.js"></script>
-  <script>
-    // Your existing JavaScript code here
-  </script>
+  <!-- JavaScript files are loaded at the end of the body for better performance -->
 </body>
 
 </html>
