@@ -23,6 +23,8 @@
   --card-background: #1E1E1E;  /* Slightly lighter than background */
   --text-color: #E0E0E0;      /* Light text */
   --border-color: #333333;    /* Dark border */
+  --primary-color-rgb: 255, 77, 109; /* RGB for primary color in dark mode */
+  --card-background-rgb: 30, 30, 30; /* RGB for card background in dark mode */
 }
 
 /* System preference for dark mode */
