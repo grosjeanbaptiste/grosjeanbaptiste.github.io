@@ -1,0 +1,14 @@
+[{
+  "id": "xtrada-data-scientist",
+  "type": "experience",
+  "date": "Mar 2024 - Sep 2024",
+  "title": "Data Scientist",
+  "company": "Xtrada",
+  "location": "Anvers, Belgique",
+  "description": [
+    "Utilisation de bibliothèques Python (Spacy, etc.) pour extraire des entités nommées à partir de texte via l'entraînement de modèles NER",
+    "Analyse de données et création de tableaux de bord",
+    "Traitement du langage naturel"
+  ],
+  "tags": ["Python", "NLP", "Machine Learning"]
+}]

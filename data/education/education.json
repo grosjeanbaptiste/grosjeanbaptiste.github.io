@@ -1,0 +1,26 @@
+[
+  {
+    "type": "education",
+    "date": "2022 - Présent",
+    "degree": "Master en Sciences Informatiques",
+    "institution": "Université de Mons (UMons)",
+    "location": "Mons, Belgique",
+    "description": "Spécialisation en intelligence artificielle et science des données."
+  },
+  {
+    "type": "education",
+    "date": "2019 - 2022",
+    "degree": "Bachelier en Informatique",
+    "institution": "Haute École Louvain en Hainaut (HELHa)",
+    "location": "Mons, Belgique",
+    "description": "Formation axée sur le développement logiciel et les systèmes d'information."
+  },
+  {
+    "type": "education",
+    "date": "2015 - 2016",
+    "degree": "Bachelier en Ingénieur de Gestion",
+    "institution": "ICHEC Brussels Management School",
+    "location": "Bruxelles, Belgique",
+    "description": "Première année en gestion d'entreprise avec orientation en finance et comptabilité."
+  }
+]

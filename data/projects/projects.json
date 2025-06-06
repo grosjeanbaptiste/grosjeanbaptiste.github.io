@@ -1,0 +1,26 @@
+[
+  {
+    "type": "project",
+    "title": "Système de recommandation de films",
+    "date": "2023",
+    "description": "Développement d'un système de recommandation basé sur le filtrage collaboratif et le traitement du langage naturel.",
+    "technologies": ["Python", "Scikit-learn", "NLTK", "Flask"],
+    "link": "https://github.com/username/movie-recommender"
+  },
+  {
+    "type": "project",
+    "title": "Application de gestion de tâches",
+    "date": "2022",
+    "description": "Application web responsive pour la gestion de tâches avec authentification utilisateur et stockage en temps réel.",
+    "technologies": ["React", "Node.js", "MongoDB", "Express"],
+    "link": "https://github.com/username/task-manager"
+  },
+  {
+    "type": "project",
+    "title": "Analyse de données climatiques",
+    "date": "2021",
+    "description": "Visualisation interactive des tendances climatiques à partir de données météorologiques historiques.",
+    "technologies": ["Python", "Pandas", "Matplotlib", "D3.js"],
+    "link": "https://github.com/username/climate-analysis"
+  }
+]

@@ -1,0 +1,41 @@
+[
+  {
+    "type": "experience",
+    "date": "Mar 2024 - Sep 2024",
+    "title": "Data Scientist",
+    "company": "Xtrada",
+    "location": "Anvers, Belgique",
+    "description": [
+      "Utilisation de bibliothèques Python (Spacy, etc.) pour extraire des entités nommées à partir de texte via l'entraînement de modèles NER",
+      "Analyse de données et création de tableaux de bord",
+      "Traitement du langage naturel"
+    ],
+    "tags": ["Python", "NLP", "Machine Learning"]
+  },
+  {
+    "type": "experience",
+    "date": "2023 - 2024",
+    "title": "Développeur Full Stack",
+    "company": "TechSolutions SA",
+    "location": "Bruxelles, Belgique",
+    "description": [
+      "Développement d'applications web avec React et Node.js",
+      "Conception et optimisation de bases de données relationnelles",
+      "Mise en place de tests automatisés"
+    ],
+    "tags": ["JavaScript", "React", "Node.js", "PostgreSQL"]
+  },
+  {
+    "type": "experience",
+    "date": "2021 - 2022",
+    "title": "Stagiaire en Développement Web",
+    "company": "WebAgency",
+    "location": "Mons, Belgique",
+    "description": [
+      "Participation au développement de sites web pour des clients",
+      "Intégration de maquettes en HTML/CSS",
+      "Optimisation des performances et référencement"
+    ],
+    "tags": ["HTML5", "CSS3", "JavaScript", "WordPress"]
+  }
+]

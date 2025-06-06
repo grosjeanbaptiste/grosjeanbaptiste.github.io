@@ -1,47 +1,142 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Baptiste Grosjean - CV</title>
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Professional portfolio and CV of Baptiste Grosjean - Computer Scientist and AI Software Crafter">
+  <title>Baptiste Grosjean | Computer Scientist & AI Software Crafter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/themes.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+  <script>
+    // Minimal initialization script to ensure loading screen is hidden
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log('Minimal initialization script running');
+      document.body.classList.remove('loading');
+      document.body.classList.add('loaded');
+      
+      setTimeout(function() {
+        const loadingScreen = document.querySelector('.loading');
+        if (loadingScreen && loadingScreen.parentNode) {
+          loadingScreen.style.opacity = '0';
+          loadingScreen.style.visibility = 'hidden';
+          setTimeout(() => loadingScreen.parentNode.removeChild(loadingScreen), 500);
+        }
+      }, 1000);
+    });
+  </script>
+  <script src="js/theme.js" defer></script>
+  <!-- Temporarily disabled to avoid conflicts with data-loader.js -->
+  <!-- <script src="js/timeline.js" defer></script> -->
+  <script src="js/script.js" defer></script>
   <style>
-    @import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+    /* Initial loading animation */
+    body.loading {
+      overflow: hidden;
+    }
+    
+    /* Hide content until loaded */
+    .main-content {
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+    
+    body.loaded .main-content {
+      opacity: 1;
+    }
   </style>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 
-<body>
+<body class="loading">
+  <!-- Loading Animation -->
+  <div class="loading">
+    <div class="loading-content">
+      <div class="loading-spinner">
+        <div class="loading-spinner-inner"></div>
+      </div>
+      <h2 class="loading-text">Baptiste Grosjean</h2>
+      <p class="loading-subtitle">Portfolio</p>
+      <div class="loading-progress">
+        <div class="loading-progress-bar"></div>
+      </div>
+      <div class="loading-percentage">0%</div>
+    </div>
+  </div>
+  <header class="navbar">
+    <div class="container">
+      <a href="#" class="nav-logo">BG</a>
+      <div class="nav-right">
+        <nav>
+          <ul class="nav-menu">
+            <li><a href="#about" class="nav-link active">À propos</a></li>
+            <li><a href="#timeline" class="nav-link">Parcours</a></li>
+            <li><a href="#skills" class="nav-link">Compétences</a></li>
+            <li><a href="#references" class="nav-link">Références</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">
+          <i class="fas fa-moon"></i>
+        </button>
+        <button class="mobile-menu-btn" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+  
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
 
-  <nav>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#references">References</a></li>
-    </ul>
-  </nav>
-
-  <div class="container">
-    <aside class="sidebar">
-      <img src="assets/images/profil.jpeg" alt="Baptiste Grosjean" id="profile-picture">
-
-      <div class="contact-info">
-        <h1>Baptiste Grosjean</h1>
-        <h2>Computer Scientist | Student @UMons by night &amp; IT @EMVI by day</h2>
-        <p>
-          <i class="fas fa-envelope"></i>
-          <a href="mailto:grosjeanbaptisteit@outlook.com">grosjeanbaptisteit@outlook.com</a>
-        </p>
-        <p>
-          <i class="fas fa-phone"></i> +32 496 28 97 05
-        </p>
-        <p>
-          <i class="fas fa-map-marker-alt"></i> Kraainem, BE
-        </p>
+  <div class="container main-content">
+    <aside class="sidebar reveal" id="sidebar" data-animate="animate-fade-in">
+      <div class="profile-card">
+        <div class="profile-img-container">
+          <img src="assets/images/profil.jpeg" alt="Baptiste Grosjean" class="profile-img" width="200" height="200">
+        </div>
+        <h1 class="profile-name">Baptiste Grosjean</h1>
+        <p class="profile-title">Computer Scientist | Student @UMons by night & AI Software Crafter by day</p>
+        
+        <div class="contact-info">
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:grosjeanbaptisteit@outlook.com">grosjeanbaptisteit@outlook.com</a>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <a href="tel:+32496289705">+32 496 28 97 05</a>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Kraainem, Belgium</span>
+          </div>
+        </div>
+        
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/baptiste-grosjean-0a9b3a1a0/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://github.com/grosjeanbaptiste" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="mailto:grosjeanbaptiste@example.com" aria-label="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+        
+        <div class="cv-download">
+          <button id="downloadCV" class="btn btn-primary">
+            <i class="fas fa-download"></i> Download CV
+          </button>
+        </div>
         <p>
           <i class="fab fa-linkedin"></i>
           <a href="https://www.linkedin.com/in/grosjeanbaptiste">LinkedIn</a>
@@ -150,24 +245,204 @@
         <canvas id="dailyLifeChart" width="200" height="200"></canvas>
       </div>
     </aside>
-    <main class="main-content" id="cvContent">
-      <section id="about">
-        <h2>À propos</h2>
-        <p>Computer Scientist | Student @UMons by night &amp; IT @EMVI by day</p>
-      </section>
-      <section id="experience">
-        <h2>Expériences Professionnelles</h2>
-        <div class="experience-item">
-          <h3>IT chez EMVI</h3>
-          <p class="date">2024-10-01 - </p>
-          <p class="location">Brugge, Flanders, Belgium</p>
-          <p></p>
+    <main class="main-content">
+      <!-- Section À propos -->
+      <section id="about" class="section reveal" data-animate="animate-fade-in-up">
+        <div class="section-header">
+          <h2 class="section-title">À propos</h2>
+          <div class="section-divider"></div>
         </div>
-        <div class="experience-item">
-          <h3>Data Scientist chez Xtrada</h3>
-          <p class="date">2024-03-01 - 2024-09-22</p>
-          <p class="location">Antwerp, Flanders, Belgium</p>
-          <p>Use of python libraries (Spacy,...) to extract named entities from text via NER model training and
+        <div class="about-content">
+          <div class="about-text">
+            <p class="lead">Hello! I'm Baptiste, a passionate Computer Scientist and Software Developer with a strong foundation in full-stack development and cloud technologies.</p>
+            <p>With a background in computer science and hands-on experience in developing scalable web applications, I specialize in creating efficient, user-friendly solutions that solve real-world problems. My journey in tech has equipped me with a diverse skill set and a problem-solving mindset.</p>
+            <p>When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or sharing my knowledge with the developer community.</p>
+          </div>
+          <div class="about-stats">
+            <div class="stat-item">
+              <span class="stat-number" data-count="5">0</span>+
+              <span class="stat-label">Years Experience</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number" data-count="20">0</span>+
+              <span class="stat-label">Projects Completed</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number" data-count="10">0</span>+
+              <span class="stat-label">Technologies</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+        
+        <div class="timeline-container">
+          <div class="timeline-filters">
+            <button class="timeline-filter-btn active" data-filter="all">Tout afficher</button>
+            <button class="timeline-filter-btn" data-filter="work">Expériences</button>
+            <button class="timeline-filter-btn" data-filter="education">Formations</button>
+          </div>
+          
+          <div class="timeline">
+            <!-- Expérience 1 -->
+            <div class="timeline-item left" data-type="work" style="opacity: 0;">
+              <div class="timeline-content">
+                <span class="timeline-date">2024 - Présent</span>
+                <h3 class="timeline-title">IT Specialist</h3>
+                <div class="timeline-company">
+                  <i class="fas fa-building"></i>
+                  EMVI
+                </div>
+                <div class="timeline-location">
+                  <i class="fas fa-map-marker-alt"></i>
+                  Bruges, Belgique
+                </div>
+                <ul class="timeline-description">
+                  <li>Description des responsabilités et réalisations</li>
+                  <li>Technologies utilisées</li>
+                  <li>Projets marquants</li>
+                </ul>
+                <div class="timeline-tags">
+                  <span class="timeline-tag">IT Support</span>
+                  <span class="timeline-tag">Réseau</span>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Formation 1 -->
+            <div class="timeline-item right" data-type="education" style="opacity: 0;">
+              <div class="timeline-content">
+                <span class="timeline-date">2022 - 2024</span>
+                <h3 class="timeline-title">Master en Informatique</h3>
+                <div class="timeline-company">
+                  <i class="fas fa-university"></i>
+                  UMons
+                </div>
+                <div class="timeline-location">
+                  <i class="fas fa-map-marker-alt"></i>
+                  Mons, Belgique
+                </div>
+                <ul class="timeline-description">
+                  <li>Spécialisation en intelligence artificielle</li>
+                  <li>Projet de fin d'études sur le machine learning</li>
+                </ul>
+                <div class="timeline-tags">
+                  <span class="timeline-tag">IA</span>
+                  <span class="timeline-tag">Machine Learning</span>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Ajoutez plus d'éléments de timeline ici -->
+            
+          </div>
+        </div>
+        
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3>Senior Software Engineer</h3>
+                <span class="timeline-period">2022 - Present</span>
+              </div>
+              <div class="timeline-company">
+                <i class="fas fa-building"></i>
+                <span>TechCorp Solutions</span>
+              </div>
+              <ul class="timeline-description">
+                <li>Led a team of 5 developers in building a microservices-based e-commerce platform using Node.js, React, and Kubernetes</li>
+                <li>Improved application performance by 40% through code optimization and database query refinement</li>
+                <li>Implemented CI/CD pipelines using GitHub Actions and Docker, reducing deployment time by 60%</li>
+                <li>Mentored junior developers and conducted code reviews to maintain code quality</li>
+              </ul>
+              <div class="tech-tags">
+                <span>Node.js</span>
+                <span>React</span>
+                <span>Kubernetes</span>
+                <span>AWS</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3>Full Stack Developer</h3>
+                <span class="timeline-period">2019 - 2022</span>
+              </div>
+              <div class="timeline-company">
+                <i class="fas fa-building"></i>
+                <span>WebCraft Studios</span>
+              </div>
+              <ul class="timeline-description">
+                <li>Developed and maintained responsive web applications using React, Node.js, and MongoDB</li>
+                <li>Collaborated with UI/UX designers to implement pixel-perfect interfaces</li>
+                <li>Reduced page load time by 30% through performance optimization</li>
+                <li>Integrated third-party APIs including payment gateways and social media platforms</li>
+              </ul>
+              <div class="tech-tags">
+                <span>React</span>
+                <span>Node.js</span>
+                <span>MongoDB</span>
+                <span>REST APIs</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- IT chez EMVI -->
+        <div class="timeline-item left" data-type="experience">
+          <div class="timeline-content">
+            <span class="timeline-date">Oct 2024 - Présent</span>
+            <h3 class="timeline-title">IT Specialist</h3>
+            <div class="timeline-company">
+              <i class="fas fa-building"></i>
+              EMVI
+            </div>
+            <div class="timeline-location">
+              <i class="fas fa-map-marker-alt"></i>
+              Bruges, Belgique
+            </div>
+            <ul class="timeline-description">
+              <li>Description des responsabilités et réalisations</li>
+              <li>Technologies utilisées</li>
+              <li>Projets marquants</li>
+            </ul>
+            <div class="timeline-tags">
+              <span class="timeline-tag">IT Support</span>
+              <span class="timeline-tag">Réseau</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Data Scientist chez Xtrada -->
+        <div class="timeline-item right" data-type="experience">
+          <div class="timeline-content">
+            <span class="timeline-date">Mar 2024 - Sep 2024</span>
+            <h3 class="timeline-title">Data Scientist</h3>
+            <div class="timeline-company">
+              <i class="fas fa-building"></i>
+              Xtrada
+            </div>
+            <div class="timeline-location">
+              <i class="fas fa-map-marker-alt"></i>
+              Anvers, Belgique
+            </div>
+            <ul class="timeline-description">
+              <li>Utilisation de bibliothèques Python (Spacy, etc.) pour extraire des entités nommées à partir de texte via l'entraînement de modèles NER</li>
+              <li>Analyse de données et création de tableaux de bord</li>
+              <li>Traitement du langage naturel</li>
+            </ul>
+            <div class="timeline-tags">
+              <span class="timeline-tag">Python</span>
+              <span class="timeline-tag">NLP</span>
+              <span class="timeline-tag">Machine Learning</span>
+            </div>
+          </div>
+        </div>
             implementation in .Net
 
             Model rate 87%</p>
@@ -210,236 +485,328 @@
             React.js, and Angular.js, encompassing everything from database development to user interface
             and backend.</p>
         </div>
-        <div class="experience-item">
-          <h3>Full Stack Developer Web Intern chez Hackathon Citizens of Wallonia</h3>
-          <p class="date">2023-03-29 - 2023-03-31</p>
-          <p class="location">Charleroi, Région wallonne, Belgique</p>
-          <p>OnlyTogether: solution allowing the vulnerable users always being accompagned</p>
+        <!-- Hackathon Citizens of Wallonia -->
+        <div class="timeline-item left" data-type="experience">
+          <div class="timeline-content">
+            <span class="timeline-date">Mar 2023</span>
+            <h3 class="timeline-title">Développeur Full Stack Web (Stage)</h3>
+            <div class="timeline-company">
+              <i class="fas fa-building"></i>
+              Hackathon Citizens of Wallonia
+            </div>
+            <div class="timeline-location">
+              <i class="fas fa-map-marker-alt"></i>
+              Charleroi, Belgique
+            </div>
+            <ul class="timeline-description">
+              <li>Développement de "OnlyTogether" : solution permettant aux utilisateurs vulnérables d'être toujours accompagnés</li>
+              <li>Participation à un hackathon intensif de 3 jours</li>
+              <li>Travail en équipe sur une solution innovante</li>
+            </ul>
+            <div class="timeline-tags">
+              <span class="timeline-tag">Développement Web</span>
+              <span class="timeline-tag">Hackathon</span>
+            </div>
+          </div>
         </div>
-        <div class="experience-item">
-          <h3>Full Stack Developer Web Intern chez EDITx: IT Challenges, IT Jobs, Education in IT for X
-          </h3>
-          <p class="date">2022-04-01 - 2022-04-30</p>
-          <p class="location">Région de Bruxelles-Capitale, Belgique</p>
-          <p></p>
+
+        <!-- EDITx -->
+        <div class="timeline-item right" data-type="experience">
+          <div class="timeline-content">
+            <span class="timeline-date">Avr 2022</span>
+            <h3 class="timeline-title">Développeur Full Stack Web (Stage)</h3>
+            <div class="timeline-company">
+              <i class="fas fa-building"></i>
+              EDITx
+            </div>
+            <div class="timeline-location">
+              <i class="fas fa-map-marker-alt"></i>
+              Bruxelles, Belgique
+            </div>
+            <ul class="timeline-description">
+              <li>Développement d'applications web éducatives</li>
+              <li>Participation à des défis informatiques</li>
+              <li>Création de contenu éducatif en informatique</li>
+            </ul>
+            <div class="timeline-tags">
+              <span class="timeline-tag">Développement Web</span>
+              <span class="timeline-tag">Éducation</span>
+            </div>
+          </div>
         </div>
-        <div class="experience-item">
-          <h3>Student Job chez Les Auberges de Jeunesse - Wallonie &amp; Bruxelles</h3>
-          <p class="date">2022-03-30 - 2022-03-31</p>
-          <p class="location">Région de Bruxelles-Capitale, Belgique</p>
-          <p></p>
+
+        <!-- RESTOMAX -->
+        <div class="timeline-item left" data-type="experience">
+          <div class="timeline-content">
+            <span class="timeline-date">Nov 2021 - Mar 2022</span>
+            <h3 class="timeline-title">Développeur Full Stack Web (Stage)</h3>
+            <div class="timeline-company">
+              <i class="fas fa-building"></i>
+              RESTOMAX
+            </div>
+            <div class="timeline-location">
+              <i class="fas fa-map-marker-alt"></i>
+              Bruxelles, Belgique
+            </div>
+            <ul class="timeline-description">
+              <li>Développement d'applications web pour la gestion de restaurant</li>
+              <li>Travail sur des solutions logicielles pour l'industrie hôtelière</li>
+              <li>Collaboration avec une équipe de développement</li>
+            </ul>
+            <div class="timeline-tags">
+              <span class="timeline-tag">Développement Web</span>
+              <span class="timeline-tag">Restauration</span>
+            </div>
+          </div>
         </div>
-        <div class="experience-item">
-          <h3>Full Stack Developer Web Intern chez RESTOMAX</h3>
-          <p class="date">2021-11-01 - 2022-03-31</p>
-          <p class="location">Région de Bruxelles-Capitale, Belgique</p>
-          <p></p>
+
+        <!-- Auberges de Jeunesse -->
+        <div class="timeline-item right" data-type="experience">
+          <div class="timeline-content">
+            <span class="timeline-date">Mar 2022</span>
+            <h3 class="timeline-title">Job étudiant</h3>
+            <div class="timeline-company">
+              <i class="fas fa-building"></i>
+              Les Auberges de Jeunesse
+            </div>
+            <div class="timeline-location">
+              <i class="fas fa-map-marker-alt"></i>
+              Bruxelles, Belgique
+            </div>
+            <ul class="timeline-description">
+              <li>Accueil et service client</li>
+              <li>Gestion des réservations</li>
+              <li>Entretien des espaces communs</li>
+            </ul>
+            <div class="timeline-tags">
+              <span class="timeline-tag">Service client</span>
+              <span class="timeline-tag">Tourisme</span>
+            </div>
+          </div>
         </div>
-        <div class="experience-item">
-          <h3>Student Job chez Quick Restaurant</h3>
-          <p class="date">2017-09-01 - 2017-09-30</p>
-          <p class="location">Kraainem, Flemish Region, Belgium</p>
-          <p></p>
+
+        <!-- Quick Restaurant -->
+        <div class="timeline-item left" data-type="experience">
+          <div class="timeline-content">
+            <span class="timeline-date">Sep 2017</span>
+            <h3 class="timeline-title">Job étudiant</h3>
+            <div class="timeline-company">
+              <i class="fas fa-building"></i>
+              Quick Restaurant
+            </div>
+            <div class="timeline-location">
+              <i class="fas fa-map-marker-alt"></i>
+              Kraainem, Belgique
+            </div>
+            <ul class="timeline-description">
+              <li>Service en salle et en caisse</li>
+              <li>Préparation des commandes</li>
+              <li>Nettoyage et entretien</li>
+            </ul>
+              <span class="timeline-tag">Restauration rapide</span>
+              <span class="timeline-tag">Service client</span>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section id="education">
-        <h2>Éducation</h2>
-        <div class="education-item">
-          <h3>Master of Science - MS en Computer Science</h3>
-          <p class="institution">UMons</p>
-          <p class="date">2022-10-15 - </p>
-          <p></p>
+      <section id="timeline" class="section">
+        <div class="section-header reveal" data-animate="animate-fade-in-up">
+          <h2 class="section-title">Mon Parcours</h2>
+          <div class="section-divider"></div>
         </div>
-        <div class="education-item">
-          <h3>Professional Bachelor&#x27;s degree en Information Systems Management</h3>
-          <p class="institution">Ecole Pratique Hautes Etudes Commerciales (EPHEC-EPS)</p>
-          <p class="date">2018-09-30 - 2022-10-15</p>
-          <p>Satisfaction </p>
+        <!-- Conteneur pour les filtres -->
+        <div id="timeline-filters" class="timeline-filters"></div>
+        
+        <!-- Conteneur pour la timeline -->
+        <div class="timeline">
+          <!-- Les éléments de la timeline seront chargés dynamiquement ici -->
         </div>
-        <div class="education-item">
-          <h3>Attestation en 7e Spéciale Mathématiques</h3>
-          <p class="institution">Institut Saint-Louis Bruxelles</p>
-          <p class="date">2019-09-30 - 2020-06-30</p>
-          <p>Attestation</p>
-        </div>
-        <div class="education-item">
-          <h3>Bachelor of Arts - BA en Political sciences</h3>
-          <p class="institution">Université Saint-Louis - Bruxelles</p>
-          <p class="date">2016-09-30 - 2019-06-30</p>
-          <p>29 credits earned in 2016-2017, contact me for more informations.</p>
-        </div>
-        <div class="education-item">
-          <h3>Bachelor of Science - BSc en Business Engineering</h3>
-          <p class="institution">Solvay Brussels School of Economics and Management</p>
-          <p class="date">2015-09-30 - 2016-06-30</p>
-          <p>Contact me for more informations.</p>
-        </div>
-        <div class="education-item">
-          <h3>Bachelor of Science - BSc en Business Engineering</h3>
-          <p class="institution">Université libre de Bruxelles</p>
-          <p class="date">2015-09-30 - 2016-06-30</p>
-          <p>Contact me for more informations.</p>
-        </div>
-        <div class="education-item">
-          <h3>Cours préparatoires en Médecine et dentisterie</h3>
-          <p class="institution">UCLouvain - Université catholique de Louvain</p>
-          <p class="date">2014-09-30 - 2015-06-30</p>
-          <p>Attestation </p>
-        </div>
-        <div class="education-item">
-          <h3>C.E.S.S. en General Studies Maths &amp; Modern languages</h3>
-          <p class="institution">Centre Scolaire Saint-Adrien - Val Duchesse</p>
-          <p class="date">2012-09-30 - 2015-06-30</p>
-          <p>Satis bene</p>
-        </div>
-        <div class="education-item">
-          <h3> en General studies Latin &amp; Greec</h3>
-          <p class="institution">Lycée Mater Dei</p>
-          <p class="date">2009-09-30 - 2012-06-30</p>
-          <p></p>
-        </div>
+        
+        <!-- Conteneur pour la pagination -->
+        <div id="pagination" class="pagination-container"></div>
       </section>
 
-      <section id="projects">
-        <h2>Projets</h2>
-        <div class="project-item">
-          <h3>EduCraft</h3>
-          <p class="date">2024-03-29 - 2024-03-31</p>
-          <p>Education Manager</p>
-          <p></p>
-          <p>Type: </p>
-          <p>Rôle: </p>
-          <p>Mots-clés: </p>
-          <a href="">Voir le projet</a>
+      <section id="references" class="section">
+        <div class="section-header reveal" data-animate="animate-fade-in-up">
+          <h2 class="section-title">References</h2>
+          <div class="section-divider"></div>
         </div>
-        <div class="project-item">
-          <h3>MyWay</h3>
-          <p class="date">2023-02-01 - </p>
-          <p>Education manager for students.</p>
-          <p>Education manager for students.</p>
-          <p>Type: Web Application</p>
-          <p>Rôle: Founder </p>
-          <p>Mots-clés: JavaScript API UI/UX </p>
-          <a href="https://my-way-bg.vercel.app">Voir le projet</a>
-        </div>
-        <div class="project-item">
-          <h3>VhAuctions NER Inventory Model</h3>
-          <p class="date">2024-03-01 - 2024-08-07</p>
-          <p>Named Entity Recognition Machine Learning Model to extract Inventory Items from and audio transcription.
-          </p>
-          <p></p>
-          <p>Type: </p>
-          <p>Rôle: </p>
-          <p>Mots-clés: </p>
-          <a href="">Voir le projet</a>
-        </div>
-        <div class="project-item">
-          <h3>VhAuctions</h3>
-          <p class="date">2024-01-01 - 2024-02-28</p>
-          <p>Fleet manager for auctions.</p>
-          <p></p>
-          <p>Type: </p>
-          <p>Rôle: </p>
-          <p>Mots-clés: </p>
-          <a href="">Voir le projet</a>
-        </div>
-        <div class="project-item">
-          <h3>Kwalitijd</h3>
-          <p class="date">2023-09-01 - 2023-12-31</p>
-          <p>Survey manager for sports clubs and federations.</p>
-          <p></p>
-          <p>Type: </p>
-          <p>Rôle: </p>
-          <p>Mots-clés: </p>
-          <a href="">Voir le projet</a>
-        </div>
-        <div class="project-item">
-          <h3>WebMenu</h3>
-          <p class="date">2021-11-01 - 2022-03-31</p>
-          <p>QRCode based cash register for HoReCa establishments.</p>
-          <p></p>
-          <p>Type: </p>
-          <p>Rôle: </p>
-          <p>Mots-clés: </p>
-          <a href="">Voir le projet</a>
-        </div>
-      </section>
+        
+        <div class="references-grid">
+          <!-- Reference 1 -->
+          <div class="reference-card reveal" data-animate="animate-fade-in-up">
+            <div class="reference-content">
+              <div class="reference-text">
+                I had the pleasure of working with Baptiste for a year, with the added joy of mentoring him on a
+                project for three months. If there's one thing that stands out about Baptiste, it's his boundless
+                energy. Whether it's 9 AM or 9 PM, he's always the most enthusiastic person in the room—sometimes
+                even more enthusiastic than the coffee machine.
+                <br><br>
+                Baptiste brings a contagious energy to any project he's part of. He's outgoing, smart, and has an
+                eagerness to learn that is truly admirable. Whether he's diving into a complex task or asking
+                insightful questions, he's always in search of knowledge.
+              </div>
+              <div class="reference-author">
+                <div class="reference-avatar">TS</div>
+                <div class="reference-info">
+                  <h4>Tino Schuerewegen</h4>
+                  <p>Software Developer at Xtrada</p>
+                </div>
+              </div>
+            </div>
+          </div>
 
-      <section id="references">
-        <h2>Références</h2>
-        <div class="reference-item">
-          <p>
-            <strong>Tino Schuerewegen, Software developer at Xtrada</strong>
-          </p>
-          <blockquote>I had the pleasure of working with Baptiste for a year, with the added joy of mentoring him on a
-            project for three months. If there&#x27;s one thing that stands out about Baptiste, it&#x27;s his boundless
-            energy. Whether it&#x27;s 9 AM or 9 PM, he&#x27;s always the most enthusiastic person in the room—sometimes
-            even more enthusiastic than the coffee machine.
+          <!-- Reference 2 -->
+          <div class="reference-card reveal" data-animate="animate-fade-in-up" data-delay="0.1s">
+            <div class="reference-content">
+              <div class="reference-text">
+                Hoewel we niet direct samenwerkten, had ik altijd een heel fijne connectie met Baptiste. In een
+                mengelmoes van Engels, Nederlands en Frans deelden we vaak leuke gesprekken. Zijn enthousiasme en energie
+                zijn echt aanstekelijk, en hij weet een prettige, informele sfeer te creëren in elke interactie.
+              </div>
+              <div class="reference-author">
+                <div class="reference-avatar">EV</div>
+                <div class="reference-info">
+                  <h4>Emiel Van Gysegem</h4>
+                  <p>Marketing and Operations at Xtra Groep</p>
+                </div>
+              </div>
+            </div>
+          </div>
 
-            Baptiste brings a contagious energy to any project he&#x27;s part of. He’s outgoing, smart, and has an
-            eagerness to learn that is truly admirable. Whether he&#x27;s diving into a complex task or asking
-            insightful questions, he&#x27;s always in search of knowledge. His enthusiasm for learning, especially when
-            it comes to leveraging tools like ChatGPT, is both impressive and a little intimidating. Seriously, if
-            ChatGPT had a best friend, it would be Baptiste!
+          <!-- Reference 3 -->
+          <div class="reference-card reveal" data-animate="animate-fade-in-up" data-delay="0.2s">
+            <div class="reference-content">
+              <div class="reference-text">
+                Baptiste is a full-stack software developer and is driven by an unwavering determination. This
+                mindset permeates every aspect of his career. He has worked in various fields, allowing him to quickly adapt
+                to any situation. These roles have honed both his technical and interpersonal skills, making him a versatile
+                collaborator who significantly impacts every project he joins.
+              </div>
+              <div class="reference-author">
+                <div class="reference-avatar">SC</div>
+                <div class="reference-info">
+                  <h4>Steven Claus</h4>
+                  <p>CFO at Xtra Groep</p>
+                </div>
+              </div>
+            </div>
+          </div>
 
-            He’s also incredibly hands-on, never shying away from rolling up his sleeves and getting deep into the work.
-            His approach isn&#x27;t just theoretical; he&#x27;s all about practical, tangible results.
+          <!-- Reference 4 -->
+          <div class="reference-card reveal" data-animate="animate-fade-in-up" data-delay="0.3s">
+            <div class="reference-content">
+              <div class="reference-text">
+                Baptiste is naast een software ontwikkelaar, graag bezig met data-analyse en is een expert in het
+                gebruik van chat-gtp. Hij leert graag nieuwe dingen en doet dit ook snel. Hij is erg enthousiast in omgang
+                en staat steeds klaar voor een vriendelijk woord of wat advies.
+              </div>
+              <div class="reference-author">
+                <div class="reference-avatar">TJ</div>
+                <div class="reference-info">
+                  <h4>Tjörven Janssens</h4>
+                  <p>Software Developer at Xtrada</p>
+                </div>
+              </div>
+            </div>
+          </div>
 
-            In summary, if you&#x27;re looking for someone who brings enthusiasm, intelligence, and a touch of humor to
-            every task, Baptiste is your person. Working with him was not just productive, but genuinely enjoyable.
-          </blockquote>
+          <!-- Reference 5 -->
+          <div class="reference-card reveal" data-animate="animate-fade-in-up" data-delay="0.4s">
+            <div class="reference-content">
+              <div class="reference-text">
+                Baptiste is a great and devoted developer who's eager to keep learning new technologies and
+                elevate his skill set. You would be amazed about not only his knowledge but also his warm open enthusiasm.
+                Baptiste, you're going to be doing great things in your life, just keep your vibrate spirit ✊
+              </div>
+              <div class="reference-author">
+                <div class="reference-avatar">MC</div>
+                <div class="reference-info">
+                  <h4>Michael Culot</h4>
+                  <p>Sales Manager at Xtrada</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="reference-item">
-          <p>
-            <strong>Emiel Van Gysegem, Marketing and operations at Xtra Groep</strong>
-          </p>
-          <blockquote>Hoewel we niet direct samenwerkten, had ik altijd een heel fijne connectie met Baptiste. In een
-            mengelmoes van Engels, Nederlands en Frans deelden we vaak leuke gesprekken. Zijn enthousiasme en energie
-            zijn echt aanstekelijk, en hij weet een prettige, informele sfeer te creëren in elke interactie. Baptiste is
-            iemand die een positieve dynamiek met zich meebrengt.</blockquote>
-        </div>
-        <div class="reference-item">
-          <p>
-            <strong>Steven Claus, CFO at Xtra Groep</strong>
-          </p>
-          <blockquote>Baptiste is a full-stack software developer and is driven by an unwavering determination. This
-            mindset permeates every aspect of his career. He has worked in various fields, allowing him to quickly adapt
-            to any situation. These roles have honed both his technical and interpersonal skills, making him a versatile
-            collaborator who significantly impacts every project he joins. Fueled by a constant desire to learn, he
-            continually updates his knowledge through a master’s degree in computer science. This ongoing learning
-            journey makes him a well-rounded IT professional in the field of computer science.</blockquote>
-        </div>
-        <div class="reference-item">
-          <p>
-            <strong>Tjörven Janssens, software developer at Xtrada</strong>
-          </p>
-          <blockquote>Baptiste is naast een software ontwikkelaar, graag bezig met data-analyse en is een expert in het
-            gebruik van chat-gtp. Hij leert graag nieuwe dingen en doet dit ook snel. Hij is erg enthousiast in omgang
-            en staat steeds klaar voor een vriendelijk woord of wat advies.</blockquote>
-        </div>
-        <div class="reference-item">
-          <p>
-            <strong>Michael Culot, Sales manager at Xtrada</strong>
-          </p>
-          <blockquote>Baptiste is a great and devoted developer who’s eager to keep learning new technologies and
-            elevate his skill set. You would be amazed about not only his knowledge but also his warm open enthusiasm.
-            Baptiste, you’re going to be doing great things in your life, just keep your vibrate spirit ✊</blockquote>
-        </div>
-      </section>
-
-      <section id="contact">
-        <h2>Contact</h2>
-        <p>Feel free to reach out!</p>
       </section>
     </main>
   </div>
-
-  <button id="cvButton">Preview and Download CV</button>
-
+  
   <script>
-    document.getElementById('cvButton').addEventListener('click', function() {
-      const element = document.getElementById('cvContent'); // Assuming you have an element with this ID
+    document.addEventListener('DOMContentLoaded', function() {
+      // Gestion du bouton de thème
+      const themeToggle = document.getElementById('themeToggle');
+      const body = document.body;
+      
+      // Vérifier le thème sauvegardé ou utiliser le préféré du système
+      const savedTheme = localStorage.getItem('theme') || 
+                       (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      
+      // Appliquer le thème
+      body.setAttribute('data-theme', savedTheme);
+      
+      // Mettre à jour l'icône
+      updateThemeIcon(savedTheme);
+      
+      // Gestion du clic sur le bouton de thème
+      themeToggle.addEventListener('click', () => {
+        const currentTheme = body.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        body.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeIcon(newTheme);
+      });
+      
+      // Mettre à jour l'icône du thème
+      function updateThemeIcon(theme) {
+        const icon = themeToggle.querySelector('i');
+        icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+      }
+      
+      // Gestion du bouton "Retour en haut"
+      const backToTopBtn = document.getElementById('backToTop');
+      
+      window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+          backToTopBtn.classList.add('show');
+        } else {
+          backToTopBtn.classList.remove('show');
+        }
+      });
+      
+      backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+      
+      // Gestion du menu mobile
+      const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+      const navMenu = document.querySelector('.nav-menu');
+      
+      mobileMenuBtn.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        mobileMenuBtn.setAttribute('aria-expanded', 
+          mobileMenuBtn.getAttribute('aria-expanded') === 'true' ? 'false' : 'true'
+        );
+      });
+      
+      // Fermer le menu mobile lors du clic sur un lien
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          navMenu.classList.remove('active');
+          mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        });
+      });
+    });
+    
+    // Gestion du téléchargement du CV
+    document.getElementById('cvButton')?.addEventListener('click', function() {
+      const element = document.getElementById('cvContent');
       const opt = {
         margin: 1,
         filename: 'CV_Baptiste_Grosjean.pdf',
@@ -480,6 +847,91 @@
     });
   </script>
 
+  <section id="contact" class="section">
+    <div class="section-header reveal" data-animate="animate-fade-in-up">
+      <h2 class="section-title">Get In Touch</h2>
+      <div class="section-divider"></div>
+      <p class="section-subtitle">Feel free to reach out for collaboration or just a friendly hello 👋</p>
+    </div>
+    
+    <div class="contact-container">
+      <div class="contact-info reveal" data-animate="animate-fade-in-up" data-delay="0.1s">
+        <div class="contact-method">
+          <div class="contact-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div>
+            <h3>Email</h3>
+            <a href="mailto:grosjeanbaptisteit@outlook.com">grosjeanbaptisteit@outlook.com</a>
+          </div>
+        </div>
+        
+        <div class="contact-method">
+          <div class="contact-icon">
+            <i class="fas fa-phone"></i>
+          </div>
+          <div>
+            <h3>Phone</h3>
+            <a href="tel:+32496289705">+32 496 28 97 05</a>
+          </div>
+        </div>
+        
+        <div class="contact-method">
+          <div class="contact-icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <div>
+            <h3>Location</h3>
+            <p>Kraainem, Belgium</p>
+          </div>
+        </div>
+        
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/grosjeanbaptiste/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://github.com/grosjeanbaptiste" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+        </div>
+      </div>
+      
+      <form id="contactForm" class="contact-form reveal" data-animate="animate-fade-in-up" data-delay="0.2s">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">
+          <span class="btn-text">Send Message</span>
+          <i class="fas fa-paper-plane"></i>
+        </button>
+        
+        <div id="formMessage" class="form-message"></div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Chargement du script data-loader.js après le chargement du DOM -->
+  <script src="js/data-loader.js"></script>
 </body>
 
 </html>
