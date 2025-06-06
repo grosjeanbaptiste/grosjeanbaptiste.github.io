@@ -134,7 +134,8 @@ h3 {
 
 .daily-life h2 {
   font-size: 1.5em;
-  margin-top: 30px;
+  margin: 30px 0 20px 0;
+  text-align: left;
 }
 
 .daily-life canvas {
